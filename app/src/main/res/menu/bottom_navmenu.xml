@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Report"
+        android:icon="@drawable/menu_report"
+        android:id="@+id/report"/>
+    <item android:title="Home"
+        android:icon="@drawable/menu_home"
+        android:id="@+id/home"/>
+    <item android:title="Profile"
+        android:icon="@drawable/menu_profile"
+        android:id="@+id/profile"/>
+</menu>

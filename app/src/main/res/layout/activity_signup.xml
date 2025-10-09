@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ayos!"
+        android:textColor="#3C693D"
+        android:textSize="96dp"
+        android:textStyle="bold"
+        android:paddingBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/inputName"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_corner"
+        android:hint="Full Name"
+        android:inputType="textPersonName"
+        android:textColorHint="#3C693D"
+        android:padding="12dp"
+        android:gravity="center"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/inputPhone"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/rounded_corner"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        android:padding="12dp"
+        android:gravity="center"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/inputPassword"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/rounded_corner"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:gravity="center"
+        android:textAlignment="center" />
+
+    <Spinner
+        android:id="@+id/roleSpinner"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/rounded_corner"
+        android:padding="12dp" />
+
+    <EditText
+        android:id="@+id/inputInviteCode"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:hint="Invitation Code"
+        android:inputType="text"
+        android:background="@drawable/rounded_corner"
+        android:gravity="center"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btnSignup"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:text="Sign In"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#3C693D"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/linkToLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already have an account? Sign In"
+        android:textColor="#3C693D"
+        android:layout_marginTop="20dp" />
+
+</LinearLayout>

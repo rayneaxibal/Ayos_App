@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ayos!"
+        android:textColor="#3C693D"
+        android:textSize="96dp"
+        android:textStyle="bold"
+        android:paddingBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/loginPhone"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_corner"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        android:textColorHint="#3C693D"
+        android:gravity="center"
+        android:textAlignment="center"/>
+
+    <EditText
+        android:id="@+id/loginPassword"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/rounded_corner"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColorHint="#3C693D"
+        android:padding="12dp"
+        android:gravity="center"
+        android:textAlignment="center"/>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="230dp"
+        android:layout_height="50dp"
+        android:text="Sign In"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#3C693D"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/linkToSignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account? Sign Up"
+        android:layout_marginTop="20dp"/>
+</LinearLayout>

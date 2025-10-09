@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "419888392377",
+    "project_id": "ayos-ph",
+    "storage_bucket": "ayos-ph.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419888392377:android:aab6ae083d103f997f1368",
+        "android_client_info": {
+          "package_name": "com.example.ayos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6MpNJZU67-WizT2EnIc4GVnvtZCBEluc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
