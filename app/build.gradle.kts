@@ -51,4 +51,5 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("androidx.fragment:fragment-ktx:1.8.2")
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 }
