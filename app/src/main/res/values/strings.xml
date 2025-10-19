@@ -6,6 +6,17 @@
         <item>Resident</item>
         <item>LGU</item>
     </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Added for dashboard unresolvedTextView -->
+    <string name="resolved_issues">0% Resolved Issues</string>
+    <string name="unresolved_perc">0% Unresolved Issue</string>
+    <string name="pending_reports">0 Total Pending Reports</string>
+    <string name="report_desc">Pothole</string>
+    <string name="report_date">September 17</string>
+    <string name="location">Bakakeng Sur</string>
+    <string name="report">Report</string>
+    <string name="dashboard">Dashboard</string>
 </resources>

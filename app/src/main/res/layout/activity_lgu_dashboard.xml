@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/lgu_dashboard"
@@ -7,17 +8,64 @@
     android:layout_height="match_parent"
     tools:context=".LguDashboardActivity">
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/bottom_nav"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
+        <ImageView
+            android:id="@+id/myImageView"
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_1_location"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/dashboard_location"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.129"
+            tools:ignore="ContentDescription" />
 
-    </FrameLayout>
+        <TextView
+            android:id="@+id/dashboard_location"
+            android:layout_width="290dp"
+            android:layout_height="20dp"
+            android:text="@string/location"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="60dp"
+            tools:layout_editor_absoluteY="81dp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/dashboard"
+            android:layout_width="168dp"
+            android:layout_height="50dp"
+            android:foregroundTint="#4B954F"
+            android:text="@string/dashboard"
+            android:textColor="#3C693D"
+            android:textColorLink="@color/white"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="38dp"
+            tools:layout_editor_absoluteY="35dp"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/reportImage"
+            android:layout_width="60dp"
+            android:layout_height="55dp"
+            android:src="@drawable/icons8_image_placeholder_50"
+            tools:layout_editor_absoluteX="81dp"
+            tools:layout_editor_absoluteY="501dp"
+            tools:ignore="ContentDescription,MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -42,6 +90,62 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navmenu"/>
+        app:menu="@menu/bottom_navmenu" />
+
+    <View
+        android:id="@+id/reportView"
+        android:layout_width="321dp"
+        android:layout_height="136dp"
+        android:background="@drawable/rectangle_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.803" />
+
+    <TextView
+        android:id="@+id/resolvedTextView"
+        android:layout_width="145dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="256dp"
+        android:layout_marginBottom="35dp"
+        android:text="@string/unresolved_perc"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar"
+        app:layout_constraintHorizontal_bias="0.184"
+        app:layout_constraintStart_toStartOf="@+id/progressBar"
+        app:layout_constraintTop_toTopOf="@+id/progressBar" />
+
+    <TextView
+        android:id="@+id/unresolvedTextView"
+        android:layout_width="145dp"
+        android:layout_height="19dp"
+        android:text="@string/resolved_issues"
+        android:importantForAccessibility="yes"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar"
+        app:layout_constraintHorizontal_bias="0.184"
+        app:layout_constraintStart_toStartOf="@+id/progressBar"
+        app:layout_constraintTop_toBottomOf="@+id/resolvedTextView"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TextSizeCheck" />
+
+    <TextView
+        android:id="@+id/totalPendingReports"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:foregroundTint="#3C693D"
+        android:text="@string/pending_reports"
+        android:textColor="#4B954E"
+        android:textColorLink="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/reportView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.248"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:layout_constraintVertical_bias="0.703" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
