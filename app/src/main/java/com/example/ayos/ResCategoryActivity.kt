@@ -12,10 +12,8 @@ class ResCategoryActivity : AppCompatActivity() {
 
         val searchView = findViewById<SearchView>(R.id.searchView)
 
-        // Get the search text field inside SearchView
         val searchEditText = searchView.findViewById<EditText>(androidx.appcompat.R.id.search_src_text)
 
-        // Apply colors
         searchEditText.setHintTextColor(android.graphics.Color.parseColor("#3C693D"))
         searchEditText.setTextColor(android.graphics.Color.parseColor("#3C693D"))
     }
