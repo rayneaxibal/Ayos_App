@@ -64,7 +64,6 @@ class SignupActivity : AppCompatActivity() {
             val existingUsers: MutableList<User> =
                 gson.fromJson(prefs.getString("users", "[]"), type) ?: mutableListOf()
 
-            // Check if phone already exists
             if (existingUsers.any { it.phone == phone }) {
                 Toast.makeText(this, "Phone number already registered", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener

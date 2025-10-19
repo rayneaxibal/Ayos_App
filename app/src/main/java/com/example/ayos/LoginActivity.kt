@@ -26,7 +26,7 @@ class LoginActivity : AppCompatActivity() {
             val phone = loginPhone.text.toString().trim()
             val password = loginPassword.text.toString().trim()
 
-            // Check if fields are empty
+            // checks if fields are empty
             if (phone.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
