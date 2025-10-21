@@ -27,4 +27,20 @@
     <string name="report_name">Report Name</string>
     <string name="date">Date</string>
     <string name="review">Review</string>
+
+    <!-- Strings for activity_lgu_profile_edit_profile.xml -->
+    <string name="profile_image_description">User profile picture</string>
+    <string name="name_label">Name</string>
+    <string name="email_label">Email Account</string>
+    <string name="phone_label">Phone Number</string>
+    <string name="location_label">Location</string>
+    <string name="edit_label">Edit</string>
+    <!-- For activity_lgu_profile_settings.xml -->
+    <string name="settings_title">Settings</string>
+    <string name="theme_label">Theme</string>
+    <string name="language_label">Language</string>
+    <string name="theme_value_light">Light</string>
+    <string name="language_value_english">English</string>
+    <string name="desc_back_arrow">Back button</string>
+
 </resources>
