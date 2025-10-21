@@ -21,4 +21,5 @@
     <string name="dashboard">Dashboard</string>
     <string name="location_icon">Location icon</string>
     <string name="report_image">Report image</string>
+    <string name="submit">Submit</string>
 </resources>
