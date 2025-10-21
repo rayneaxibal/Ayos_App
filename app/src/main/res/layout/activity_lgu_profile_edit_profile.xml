@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LguProfileEditProfileActivity">
+
+    <!-- Header Background -->
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:background="@drawable/profile_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Profile Image -->
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="80dp"
+        android:contentDescription="@string/profile_image_description"
+        android:src="@drawable/ic_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="#404040" />
+
+    <!-- Divider below header -->
+    <View
+        android:id="@+id/headerDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="45dp"
+        android:layout_marginTop="32dp"
+        android:background="#CCCCCC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view" />
+
+    <!-- Profile Information Section -->
+
+    <!-- Name Row -->
+    <TextView
+        android:id="@+id/tvNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/name_label"
+        android:textColor="#404040"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerDivider" />
+
+    <TextView
+        android:id="@+id/tvNameValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:text="@string/edit_label"
+        android:textColor="#404040"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvNameLabel"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Email Row -->
+    <TextView
+        android:id="@+id/tvEmailLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/email_label"
+        android:textColor="#404040"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/tvNameLabel"
+        app:layout_constraintTop_toBottomOf="@id/tvNameLabel" />
+
+    <TextView
+        android:id="@+id/tvEmailValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_label"
+        android:textColor="#404040"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvEmailLabel"
+        app:layout_constraintEnd_toEndOf="@id/tvNameValue" />
+
+    <!-- Phone Number Row -->
+    <TextView
+        android:id="@+id/tvPhoneLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/phone_label"
+        android:textColor="#404040"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/tvNameLabel"
+        app:layout_constraintTop_toBottomOf="@id/tvEmailLabel" />
+
+    <TextView
+        android:id="@+id/tvPhoneValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_label"
+        android:textColor="#404040"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvPhoneLabel"
+        app:layout_constraintEnd_toEndOf="@id/tvNameValue" />
+
+    <!-- Location Row -->
+    <TextView
+        android:id="@+id/tvLocationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/location_label"
+        android:textColor="#404040"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/tvNameLabel"
+        app:layout_constraintTop_toBottomOf="@id/tvPhoneLabel" />
+
+    <TextView
+        android:id="@+id/tvLocationValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_label"
+        android:textColor="#404040"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvLocationLabel"
+        app:layout_constraintEnd_toEndOf="@id/tvNameValue" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

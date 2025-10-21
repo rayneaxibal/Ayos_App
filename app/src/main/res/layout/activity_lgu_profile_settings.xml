@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LguProfileSettingsActivity">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvSettingsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="@string/settings_title"
+        android:textColor="#404040"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Divider -->
+    <View
+        android:id="@+id/headerDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="24dp"
+        android:background="#CCCCCC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSettingsTitle" />
+
+    <!-- Theme Setting Row -->
+    <TextView
+        android:id="@+id/tvThemeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/theme_label"
+        android:textColor="#404040"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/headerDivider"
+        app:layout_constraintTop_toBottomOf="@+id/headerDivider" />
+
+    <TextView
+        android:id="@+id/tvThemeValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/theme_value_light"
+        android:textColor="#404040"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvThemeLabel"
+        app:layout_constraintEnd_toEndOf="@+id/headerDivider" />
+
+    <!-- Language Setting Row -->
+    <TextView
+        android:id="@+id/tvLanguageLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/language_label"
+        android:textColor="#404040"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/headerDivider"
+        app:layout_constraintTop_toBottomOf="@+id/tvThemeLabel" />
+
+    <TextView
+        android:id="@+id/tvLanguageValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/language_value_english"
+        android:textColor="#404040"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvLanguageLabel"
+        app:layout_constraintEnd_toEndOf="@+id/headerDivider" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

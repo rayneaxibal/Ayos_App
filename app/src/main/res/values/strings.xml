@@ -22,7 +22,7 @@
     <string name="location_icon">Location icon</string>
     <string name="report_image">Report image</string>
     <string name="submit">Submit</string>
-    <!-- ... other strings ... -->
+    <!-- ... lgu profile main ... -->
     <string name="profile_title">Profile</string>
     <string name="profile_image_description">User profile image</string>
     <string name="total_reports">Total No. of Reports</string>
@@ -34,6 +34,23 @@
     <string name="icon_settings">Settings icon</string>
     <string name="icon_logout">Log out icon</string>
     <string name="icon_forward_arrow">Forward arrow</string>
+
+    <!-- For activity_lgu_profile_edit_profile.xml -->
+    <string name="name_label">Name</string>
+    <string name="email_label">Email Account</string>
+    <string name="phone_label">Phone Number</string>
+    <string name="location_label">Location</string>
+    <string name="edit_label">Edit</string>
+
+    <!-- For activity_lgu_profile_settings.xml -->
+    <string name="settings_title">Settings</string>
+    <string name="theme_label">Theme</string>
+    <string name="language_label">Language</string>
+    <string name="theme_value_light">Light</string>
+    <string name="language_value_english">English</string>
+
+
+
 </resources>
 
 
