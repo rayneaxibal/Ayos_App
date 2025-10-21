@@ -141,6 +141,7 @@
 
         <!-- Edit Profile -->
         <LinearLayout
+            android:id="@+id/btnEditProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -171,6 +172,7 @@
 
         <!-- Settings -->
         <LinearLayout
+            android:id="@+id/btnSettings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"

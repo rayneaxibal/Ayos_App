@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ResDashboardActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_res_dashboard)
@@ -16,7 +17,7 @@ class ResDashboardActivity : AppCompatActivity() {
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.home -> loadFragment(HomeFragment())
-                R.id.report -> loadFragment(ReportFragment())
+                R.id.report -> loadFragment(ReportStatusFragment())
                 R.id.profile -> loadFragment(ProfileFragment())
             }
             true

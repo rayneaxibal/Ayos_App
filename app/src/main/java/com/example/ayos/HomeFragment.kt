@@ -12,6 +12,7 @@ import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.components.Legend
+import android.widget.ImageButton
 
 class HomeFragment : Fragment() {
 
@@ -40,11 +41,11 @@ class HomeFragment : Fragment() {
         dataSet.colors = listOf(Color.parseColor("#4CAF50"), Color.parseColor("#F44336"))
         dataSet.valueTextColor = Color.WHITE
         dataSet.valueTextSize = 14f
-        dataSet.setDrawValues(true) // show values on slices
+        dataSet.setDrawValues(true)
 
         val data = PieData(dataSet)
         pieChart.data = data
-        pieChart.setUsePercentValues(true) // show % instead of raw numbers
+        pieChart.setUsePercentValues(true)
         pieChart.description.isEnabled = false
         pieChart.centerText = "Reports"
         pieChart.setCenterTextSize(16f)
@@ -62,11 +63,12 @@ class HomeFragment : Fragment() {
 
         pieChart.invalidate()
 
-        val reportButton = view.findViewById<Button>(R.id.btnReport)
+        val reportButton = view.findViewById<ImageButton>(R.id.btnReport)
         reportButton.setOnClickListener {
-            requireActivity().findViewById<com.google.android.material.bottomnavigation.BottomNavigationView>(
-                R.id.bottom_nav
-            ).selectedItemId = R.id.report
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.frameLayout, ReportCategoryFragment())
+                .addToBackStack(null)
+                .commit()
         }
     }
 }

@@ -39,27 +39,32 @@
             android:textStyle="italic" />
     </LinearLayout>
 
-    <Button
+    <ImageButton
         android:id="@+id/btnLogin"
-        android:layout_width="230dp"
-        android:layout_height="50dp"
-        android:text="Login"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#3C693D"
+        android:layout_width="241dp"
+        android:layout_height="45dp"
+        android:src="@drawable/login"
+        android:background="@android:color/transparent"
+        android:contentDescription="Submit"
+        android:layout_gravity="center"
+        android:padding="12dp"
         app:layout_constraintTop_toBottomOf="@id/headerLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="250dp"/>
+        android:layout_marginTop="250dp"
+        android:clickable="true"
+        android:focusable="true"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/btnSignup"
-        android:layout_width="230dp"
-        android:layout_height="50dp"
-        android:text="Sign Up"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#3C693D"
+        android:layout_width="241dp"
+        android:layout_height="45dp"
+        android:src="@drawable/main_signup"
         app:layout_constraintTop_toBottomOf="@id/btnLogin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:focusable="true"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

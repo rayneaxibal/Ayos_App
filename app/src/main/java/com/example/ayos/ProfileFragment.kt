@@ -1,59 +1,51 @@
 package com.example.ayos
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.TextView
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ProfileFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ProfileFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ProfileFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val tvName = view.findViewById<TextView>(R.id.tvName)
+        val tvRole = view.findViewById<TextView>(R.id.tvRole)
+        val tvTotalReports = view.findViewById<TextView>(R.id.tvTotalReports)
+        val tvDailyReport = view.findViewById<TextView>(R.id.tvDailyReport)
+
+        val btnEditProfile = view.findViewById<LinearLayout>(R.id.btnEditProfile)
+        val btnSettings = view.findViewById<LinearLayout>(R.id.btnSettings)
+        val btnLogout = view.findViewById<LinearLayout>(R.id.btnLogout)
+
+        // Dummy data or get from user session
+        tvName.text = "Laira Mae Lucop"
+        tvRole.text = "Resident"
+        tvTotalReports.text = "2"
+        tvDailyReport.text = "1/3"
+
+        btnEditProfile.setOnClickListener {
+            Toast.makeText(requireContext(), "Edit Profile clicked", Toast.LENGTH_SHORT).show()
+        }
+
+        btnSettings.setOnClickListener {
+            Toast.makeText(requireContext(), "Settings clicked", Toast.LENGTH_SHORT).show()
+        }
+
+        btnLogout.setOnClickListener {
+            Toast.makeText(requireContext(), "Logged out", Toast.LENGTH_SHORT).show()
+        }
     }
 }

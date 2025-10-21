@@ -70,14 +70,16 @@
         android:gravity="center"
         android:visibility="gone"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/btnSignup"
-        android:layout_width="230dp"
-        android:layout_height="50dp"
-        android:text="Sign In"
-        android:textColor="@android:color/white"
-        android:backgroundTint="#3C693D"
-        android:layout_marginTop="20dp"/>
+        android:layout_width="241dp"
+        android:layout_height="45dp"
+        android:src="@drawable/signup"
+        android:background="@android:color/transparent"
+        android:contentDescription="Submit"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:padding="12dp"/>
 
     <TextView
         android:id="@+id/linkToLogin"

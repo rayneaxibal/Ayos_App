@@ -2,7 +2,7 @@ package com.example.ayos
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -13,8 +13,8 @@ class MainActivity : AppCompatActivity() {
         val loggedInPhone = prefs.getString("loggedInPhone", null)
         val loggedInRole = prefs.getString("loggedInRole", null)
 
+        // Auto-login if user info exists
         if (loggedInPhone != null && loggedInRole != null) {
-            // User already logged in → redirect to dashboard
             val intent = when (loggedInRole) {
                 "Resident" -> Intent(this, ResDashboardActivity::class.java)
                 "LGU" -> Intent(this, LguDashboardActivity::class.java)
@@ -29,8 +29,8 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        val btnLogin = findViewById<Button>(R.id.btnLogin)
-        val btnSignup = findViewById<Button>(R.id.btnSignup)
+        val btnLogin = findViewById<ImageButton>(R.id.btnLogin)
+        val btnSignup = findViewById<ImageButton>(R.id.btnSignup)
 
         btnLogin.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))

@@ -1,0 +1,90 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_margin="15sp">
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Report Status"
+        android:textColor="#3C693D"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/inter"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_gravity="center"/>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="15dp">
+
+            <TextView
+                android:id="@+id/btn_submitted"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:gravity="center"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="Submitted"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/active"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/btn_under_review"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:gravity="center"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="Under Review"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/inactive"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/btn_in_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:gravity="center"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="In Progress"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/inactive"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/btn_completed"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:gravity="center"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="Completed"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/inactive"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Reports RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewReports"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="16dp"/>
+</LinearLayout>

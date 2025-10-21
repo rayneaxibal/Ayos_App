@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingStart="15dp"
+    android:paddingEnd="15dp"
+    android:paddingTop="16dp">
+
+    <!-- Top Bar -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Report"
+            android:textColor="#3C693D"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/inter"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Instruction Text -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select a category that matches the issue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#404040"
+        android:fontFamily="@font/inter"
+        android:paddingTop="15dp"
+        android:paddingStart="20dp"/>
+
+    <!-- Search Bar -->
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:queryHint="Search here..."
+        android:iconifiedByDefault="false"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_margin="16dp"
+        android:background="@drawable/search_bg"/>
+
+    <FrameLayout
+        android:id="@+id/chipContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:background="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- INFRASTRUCTURE -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Infrastructure &amp; Public Utilities"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#3C693D"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupInfraGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    app:chipSpacing="8dp"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipStreetlight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Streetlight"
+                        android:checkable="true"
+                        android:textColor="#404040"
+                        app:chipBackgroundColor="@color/chip_bg"
+                        app:chipStrokeColor="@color/chip_stroke"
+                        app:chipStrokeWidth="2dp"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipPublicFacility"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Public Facility"
+                        android:checkable="true"
+                        android:textColor="#404040"
+                        app:chipBackgroundColor="@color/chip_bg"
+                        app:chipStrokeColor="@color/chip_stroke"
+                        app:chipStrokeWidth="2dp"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipDrainage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Drainage"
+                        android:checkable="true"
+                        android:textColor="#404040"
+                        app:chipBackgroundColor="@color/chip_bg"
+                        app:chipStrokeColor="@color/chip_stroke"
+                        app:chipStrokeWidth="2dp"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipDamagedRoad"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Damaged Road"
+                        android:checkable="true"
+                        android:textColor="#404040"
+                        app:chipBackgroundColor="@color/chip_bg"
+                        app:chipStrokeColor="@color/chip_stroke"
+                        app:chipStrokeWidth="2dp"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipPothole"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pothole"
+                        android:checkable="true"
+                        android:textColor="#404040"
+                        app:chipBackgroundColor="@color/chip_bg"
+                        app:chipStrokeColor="@color/chip_stroke"
+                        app:chipStrokeWidth="2dp"/>
+                </com.google.android.material.chip.ChipGroup>
+
+                <!-- ENVIRONMENT -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Environment &amp; Sanitation"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#3C693D"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupEnvGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    app:chipSpacing="8dp"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipUncollectedGarbage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Uncollected Garbage"
+                        android:checkable="true"
+                        android:textColor="#404040"
+                        app:chipBackgroundColor="@color/chip_bg"
+                        app:chipStrokeColor="@color/chip_stroke"
+                        app:chipStrokeWidth="2dp"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipIllegalDumping"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Illegal Dumping"
+                        android:checkable="true"
+                        android:textColor="#404040"
+                        app:chipBackgroundColor="@color/chip_bg"
+                        app:chipStrokeColor="@color/chip_stroke"
+                        app:chipStrokeWidth="2dp"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipFallenTree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fallen Tree"
+                        android:checkable="true"
+                        android:textColor="#404040"
+                        app:chipBackgroundColor="@color/chip_bg"
+                        app:chipStrokeColor="@color/chip_stroke"
+                        app:chipStrokeWidth="2dp"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipCloggedCanals"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Clogged Canals"
+                        android:checkable="true"
+                        android:textColor="#404040"
+                        app:chipBackgroundColor="@color/chip_bg"
+                        app:chipStrokeColor="@color/chip_stroke"
+                        app:chipStrokeWidth="2dp"/>
+                </com.google.android.material.chip.ChipGroup>
+
+                <!-- TRAFFIC -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Traffic &amp; Transport"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#3C693D"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupTrafficGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    app:chipSpacing="8dp"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipIllegalParking"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Illegal Parking"
+                        android:checkable="true"
+                        android:textColor="#404040"
+                        app:chipBackgroundColor="@color/chip_bg"
+                        app:chipStrokeColor="@color/chip_stroke"
+                        app:chipStrokeWidth="2dp"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipRoadObstruction"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Road Obstruction"
+                        android:checkable="true"
+                        android:textColor="#404040"
+                        app:chipBackgroundColor="@color/chip_bg"
+                        app:chipStrokeColor="@color/chip_stroke"
+                        app:chipStrokeWidth="2dp"/>
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipMissingTrafficSigns"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Missing Traffic Signs"
+                        android:checkable="true"
+                        android:textColor="#404040"
+                        app:chipBackgroundColor="@color/chip_bg"
+                        app:chipStrokeColor="@color/chip_stroke"
+                        app:chipStrokeWidth="2dp"/>
+                </com.google.android.material.chip.ChipGroup>
+
+                <ImageButton
+                    android:id="@+id/btnCont"
+                    android:layout_width="120dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/continue_button"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Submit"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="35dp"
+                    android:clickable="true"
+                    android:focusable="true"/>
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+</LinearLayout>
