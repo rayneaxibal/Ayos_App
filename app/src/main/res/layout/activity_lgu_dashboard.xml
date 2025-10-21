@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/lgu_dashboard"
@@ -7,16 +8,167 @@
     android:layout_height="match_parent"
     tools:context=".LguDashboardActivity">
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/reportCard"
+        android:layout_width="321dp"
+        android:layout_height="136dp"
+        android:background="@drawable/rectangle_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintVertical_bias="0.803">
 
-    </FrameLayout>
+        <ImageView
+            android:id="@+id/reportImage"
+            android:layout_width="60dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/report_image"
+            android:src="@drawable/icons8_image_placeholder_50"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/september_17"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/reportImage"
+            app:layout_constraintTop_toBottomOf="@+id/reportImage" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="112dp"
+            android:layout_marginBottom="52dp"
+            android:text="@string/pothole"
+            android:textColor="#2A6C2E"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/icons8_menu_vertical_24__1_"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.961"
+            app:layout_constraintStart_toEndOf="@+id/reportImage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.203" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/myImageView"
+        android:layout_width="19dp"
+        android:layout_height="19dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/location_icon"
+        android:scaleType="fitCenter"
+        android:src="@drawable/icon_1_location"
+        app:layout_constraintBottom_toBottomOf="@id/dashboard_location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/dashboard_location"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/dashboard_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="76dp"
+        android:importantForAccessibility="yes"
+        android:text="@string/location"
+        android:textColor="#2A6C2E"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dashboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dashboard"
+        android:textColor="#2A6C2E"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:accessibilityHeading="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="35dp" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChart"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_margin="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/reportCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/totalPendingReports"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_1_pending_report"
+        android:textColor="#2A6C2E"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:importantForAccessibility="yes"
+        app:layout_constraintBottom_toTopOf="@id/reportCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.248"
+        app:layout_constraintVertical_bias="0.703" />
+
+
+    <TextView
+        android:id="@+id/resolvedTextView"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="384dp"
+        android:importantForAccessibility="yes"
+        android:text="@string/_100_unresolved_issues"
+        android:textColor="#2A6C2E"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/unresolvedTextView"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:importantForAccessibility="yes"
+        android:text="@string/resolved_issues"
+        android:textColor="#2A6C2E"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/resolvedTextView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/resolvedTextView"
+        app:layout_constraintTop_toBottomOf="@id/resolvedTextView" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
@@ -25,6 +177,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_navmenu"/>
+        app:menu="@menu/bottom_navmenu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
