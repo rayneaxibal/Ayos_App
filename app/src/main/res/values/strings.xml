@@ -28,6 +28,22 @@
     <string name="date">Date</string>
     <string name="review">Review</string>
 
+    <!-- Strings for activity_lgu_profile.xml -->
+    <string name="profile_title">Profile</string>
+    <string name="profile_image_description">User profile picture</string>
+    <string name="total_reports">Total No. of Reports</string>
+    <string name="daily_report">Daily Report</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="settings">Settings</string>
+    <string name="log_out">Log Out</string>
+
+    <!-- Content Descriptions for Icons -->
+    <string name="icon_edit_profile">Edit profile icon</string>
+    <string name="icon_settings">Settings icon</string>
+    <string name="icon_logout">Log out icon</string>
+    <string name="icon_forward_arrow">Proceed arrow</string>
+
+
     <!-- Strings for activity_lgu_profile_edit_profile.xml -->
     <string name="profile_image_description">User profile picture</string>
     <string name="name_label">Name</string>
