@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="@string/september_17"
+            android:text="September 17"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@+id/reportImage"
             app:layout_constraintTop_toBottomOf="@+id/reportImage" />
@@ -48,12 +48,12 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="112dp"
             android:layout_marginBottom="52dp"
-            android:text="@string/pothole"
+            android:text="Pothole"
             android:textColor="#2A6C2E"
             android:textSize="28sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintEnd_toEndOf="parent"/>
 
         <ImageView
             android:id="@+id/imageView18"
@@ -130,7 +130,7 @@
         android:id="@+id/totalPendingReports"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_1_pending_report"
+        android:text="1 Pending Report"
         android:textColor="#2A6C2E"
         android:textStyle="bold"
         android:textSize="20sp"
@@ -148,7 +148,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="384dp"
         android:importantForAccessibility="yes"
-        android:text="@string/_100_unresolved_issues"
+        android:text="100 Unresolved Issues"
         android:textColor="#2A6C2E"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
