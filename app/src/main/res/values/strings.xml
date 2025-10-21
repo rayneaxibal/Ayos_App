@@ -30,7 +30,6 @@
 
     <!-- Strings for activity_lgu_profile.xml -->
     <string name="profile_title">Profile</string>
-    <string name="profile_image_description">User profile picture</string>
     <string name="total_reports">Total No. of Reports</string>
     <string name="daily_report">Daily Report</string>
     <string name="edit_profile">Edit Profile</string>
@@ -45,7 +44,6 @@
 
 
     <!-- Strings for activity_lgu_profile_edit_profile.xml -->
-    <string name="profile_image_description">User profile picture</string>
     <string name="name_label">Name</string>
     <string name="email_label">Email Account</string>
     <string name="phone_label">Phone Number</string>
@@ -58,5 +56,6 @@
     <string name="theme_value_light">Light</string>
     <string name="language_value_english">English</string>
     <string name="desc_back_arrow">Back button</string>
+    <string name="profile_image_description" />
 
 </resources>
