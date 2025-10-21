@@ -23,7 +23,7 @@
         android:id="@+id/btnSubmitLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="116dp"
+        android:layout_marginBottom="128dp"
         android:backgroundTint="#DAE5DB"
         android:text="@string/submit"
         android:textColor="#404040"
