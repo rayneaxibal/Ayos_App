@@ -22,4 +22,9 @@
     <string name="location_icon">Location icon</string>
     <string name="report_image">Report image</string>
     <string name="submit">Submit</string>
+    <string name="reports">Reports</string>
+    <string name="filter">Filter</string>
+    <string name="report_name">Report Name</string>
+    <string name="date">Date</string>
+    <string name="review">Review</string>
 </resources>
