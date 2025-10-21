@@ -31,17 +31,29 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
         <TextView
-            android:id="@+id/reportDate"
+            android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/report_date"
+            android:layout_marginTop="4dp"
+            android:text="@string/september_17"
             android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/reportImage"
+            app:layout_constraintTop_toBottomOf="@+id/reportImage" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="112dp"
+            android:layout_marginBottom="52dp"
+            android:text="@string/pothole"
             android:textColor="#2A6C2E"
-            android:importantForAccessibility="yes"
-            app:layout_constraintTop_toBottomOf="@id/reportImage"
-            app:layout_constraintStart_toStartOf="@id/reportImage"
-            android:layout_marginTop="8dp" />
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
             android:id="@+id/imageView18"
@@ -118,7 +130,7 @@
         android:id="@+id/totalPendingReports"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/pending_reports"
+        android:text="@string/_1_pending_report"
         android:textColor="#2A6C2E"
         android:textStyle="bold"
         android:textSize="20sp"
@@ -136,7 +148,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="384dp"
         android:importantForAccessibility="yes"
-        android:text="@string/unresolved_perc"
+        android:text="@string/_100_unresolved_issues"
         android:textColor="#2A6C2E"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"

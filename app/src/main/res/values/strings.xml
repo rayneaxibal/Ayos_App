@@ -27,4 +27,8 @@
     <string name="report_name">Report Name</string>
     <string name="date">Date</string>
     <string name="review">Review</string>
+    <string name="pothole">Pothole</string>
+    <string name="september_17">September 17</string>
+    <string name="_100_unresolved_issues">100% Unresolved Issues</string>
+    <string name="_1_pending_report">1 Pending Report</string>
 </resources>
