@@ -43,7 +43,7 @@
             android:id="@+id/reportCard"
             android:layout_width="321dp"
             android:layout_height="136dp"
-            android:background="@drawable/rectangle_bg"/>
+            android:background="@drawable/rectangle_bg" />
 
 
     </LinearLayout>
