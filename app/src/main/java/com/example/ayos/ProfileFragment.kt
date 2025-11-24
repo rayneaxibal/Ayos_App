@@ -1,5 +1,7 @@
 package com.example.ayos
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -45,7 +47,15 @@ class ProfileFragment : Fragment() {
         }
 
         btnLogout.setOnClickListener {
-            Toast.makeText(requireContext(), "Logged out", Toast.LENGTH_SHORT).show()
+            // Clear the user session data
+            val prefs = requireContext().getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
+            prefs.edit().clear().apply()
+
+            // Redirect to MainActivity (login screen)
+            val intent = Intent(requireContext(), MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            requireActivity().finish()
         }
     }
 }

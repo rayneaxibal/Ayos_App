@@ -8,32 +8,31 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class LguDashboardActivity : AppCompatActivity() {
+class LguReportStatusActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_lgu_dashboard)
+        setContentView(R.layout.activity_lgu_report_status)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.lgu_main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.lgu_report_status_main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        val bottomNav = findViewById<BottomNavigationView>(R.id.lgu_bottom_nav)
-        bottomNav.selectedItemId = R.id.home
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav)
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.home -> loadFragment(LguHomeFragment())
                 R.id.report -> loadFragment(LguReportStatusFragment())
-                R.id.profile -> loadFragment(LguProfileFragment())
+                R.id.profile -> loadFragment(ProfileFragment())
             }
             true
         }
 
-        // This sets LguHomeFragment as default
+        // Load the report status fragment by default
         if (savedInstanceState == null) {
-            loadFragment(LguHomeFragment())
+            loadFragment(LguReportStatusFragment())
         }
     }
 

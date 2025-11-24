@@ -25,7 +25,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="${GOOGLE_MAPS_API_KEY}" />
+            android:value="AIzaSyBv1ttLGxOVzHEXLq9M6KB-GiWXYlm6cx0" />
 
         <activity
             android:name=".RepLoc"
