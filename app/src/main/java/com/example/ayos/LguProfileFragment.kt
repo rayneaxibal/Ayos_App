@@ -24,14 +24,13 @@ class LguProfileFragment : Fragment() {
         val logoutRow = view.findViewById<View>(R.id.logoutRow)
 
         editProfileRow.setOnClickListener {
-            // Handle edit profile click
-            // Example: navigate to EditProfileFragment
-            /*
-            requireActivity().supportFragmentManager.beginTransaction()
-                .replace(R.id.frameLayout, EditProfileFragment())
-                .addToBackStack(null)
-                .commit()
-            */
+            editProfileRow.setOnClickListener {
+                // Navigate to EditProfileFragment
+                requireActivity().supportFragmentManager.beginTransaction()
+                    .replace(R.id.frameLayout, LguEditProfileFragment())
+                    .addToBackStack("edit_profile")
+                    .commit()
+            }
         }
 
         settingsRow.setOnClickListener {

@@ -20,7 +20,7 @@ class LguDashboardActivity : AppCompatActivity() {
             insets
         }
 
-        val bottomNav = findViewById<BottomNavigationView>(R.id.lgu_bottom_nav)
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav)
         bottomNav.selectedItemId = R.id.home
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {

@@ -20,6 +20,13 @@ class LguProfileActivity : AppCompatActivity() {
             insets
         }
 
+        // Load the profile fragment by default
+        if (savedInstanceState == null) {
+            loadFragment(LguProfileFragment())
+        }
+
+
+
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav)
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
@@ -30,10 +37,6 @@ class LguProfileActivity : AppCompatActivity() {
             true
         }
 
-        // Load the profile fragment by default
-        if (savedInstanceState == null) {
-            loadFragment(LguProfileFragment())
-        }
     }
 
     private fun loadFragment(fragment: Fragment) {
