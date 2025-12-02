@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_margin="15dp"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Report"
+        android:textColor="#3C693D"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/inter"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingBottom="20dp"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:id="@+id/editCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Category"
+        android:fontFamily="@font/inter"/>
+
+    <EditText
+        android:id="@+id/editDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Description"
+        android:fontFamily="@font/inter"/>
+
+    <ImageButton
+        android:id="@+id/btnCont"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+        android:src="@drawable/continue_button"
+        android:background="@android:color/transparent"
+        android:contentDescription="Continue"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp" />
+</LinearLayout>
