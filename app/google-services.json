@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "419888392377",
+    "firebase_url": "https://ayos-ph-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "ayos-ph",
     "storage_bucket": "ayos-ph.firebasestorage.app"
   },

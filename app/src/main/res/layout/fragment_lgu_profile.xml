@@ -1,3 +1,4 @@
+<!-- res/layout/fragment_lgu_profile.xml (Copy from your provided XML and add stats) -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/profileFragment"
@@ -8,7 +9,7 @@
     android:clipToPadding="false"
     android:background="#FFFFFF">
 
-    <!-- Header Section -->
+    <!-- Header Section (unchanged) -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
@@ -72,64 +73,17 @@
         android:gravity="center"
         android:layout_marginTop="20dp">
 
-        <!-- Total No. Reports -->
-        <LinearLayout
-            android:layout_width="120dp"
-            android:layout_height="100dp"
-            android:orientation="vertical"
+        <TextView
+            android:id="@+id/assignedArea"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Assigned Area: N/A"
+            android:fontFamily="@font/inter"
+            android:textSize="14sp"
+            android:textColor="#404040"
             android:gravity="center"
-            android:layout_margin="6dp"
-            android:padding="10dp"
-            android:background="@drawable/stats_lightbox">
-
-            <TextView
-                android:id="@+id/tvTotalReports"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:fontFamily="@font/inter"
-                android:textColor="#1E3D1F"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/total_no_of_reports"
-                android:fontFamily="@font/inter"
-                android:textSize="12sp"
-                android:textAlignment="center"
-                android:textColor="#404040" />
-        </LinearLayout>
-
-        <!-- Daily Report Limit -->
-        <LinearLayout
-            android:layout_width="120dp"
-            android:layout_height="100dp"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_margin="6dp"
-            android:padding="10dp"
-            android:background="@drawable/stats_greenbox">
-
-            <TextView
-                android:id="@+id/tvDailyReport"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0/3"
-                android:fontFamily="@font/inter"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:textColor="#1E3D1F" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/daily_report"
-                android:fontFamily="@font/inter"
-                android:textSize="12sp"
-                android:textColor="#404040" />
-        </LinearLayout>
+            android:layout_marginRight="15sp"/>
     </LinearLayout>
 
     <View
@@ -139,6 +93,7 @@
         android:layout_gravity="center"
         android:background="#CCCCCC" />
 
+    <!-- Buttons Section (unchanged) -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

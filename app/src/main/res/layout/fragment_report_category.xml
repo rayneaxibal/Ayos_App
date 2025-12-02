@@ -17,12 +17,13 @@
 
         <ImageButton
             android:id="@+id/backButton"
-            android:layout_width="33dp"
-            android:layout_height="33dp"
+            android:layout_width="22dp"
+            android:layout_height="23dp"
             android:src="@drawable/ic_back"
+            android:background="@android:color/transparent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintBottom_toBottomOf="parent" />
 
 
         <TextView

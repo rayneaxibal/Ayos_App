@@ -7,9 +7,6 @@
     android:paddingHorizontal="20dp"
     android:paddingTop="20dp">
 
-
-
-    <!-- Header with Back Arrow and Title -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,7 +23,6 @@
             android:focusable="true"
             android:background="?attr/selectableItemBackgroundBorderless"/>
 
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -38,7 +34,6 @@
             android:paddingVertical="8dp" />
     </LinearLayout>
 
-    <!-- Divider Line -->
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -46,7 +41,6 @@
         android:layout_marginTop="12dp"
         android:layout_marginBottom="12dp" />
 
-    <!-- Theme Option -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -72,7 +66,6 @@
             android:textColor="#A0A0A0" />
     </LinearLayout>
 
-    <!-- Language Option -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

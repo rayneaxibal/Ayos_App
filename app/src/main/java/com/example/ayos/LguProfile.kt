@@ -12,12 +12,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.firebase.firestore.FirebaseFirestore
 
-class ProfileFragment : Fragment() {
+class LguProfileFragment : Fragment() {
 
     private lateinit var tvName: TextView
     private lateinit var tvRole: TextView
-    private lateinit var tvTotalReports: TextView
-    private lateinit var tvDailyReport: TextView
+    private lateinit var assignedArea: TextView
     private lateinit var btnEditProfile: LinearLayout
     private lateinit var btnSettings: LinearLayout
     private lateinit var btnLogout: LinearLayout
@@ -27,15 +26,14 @@ class ProfileFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.fragment_profile, container, false)
+    ): View? = inflater.inflate(R.layout.fragment_lgu_profile, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         tvName = view.findViewById(R.id.tvName)
         tvRole = view.findViewById(R.id.tvRole)
-        tvTotalReports = view.findViewById(R.id.tvTotalReports)
-        tvDailyReport = view.findViewById(R.id.tvDailyReport)
+        assignedArea = view.findViewById(R.id.assignedArea)
 
         btnEditProfile = view.findViewById(R.id.btnEditProfile)
         btnSettings = view.findViewById(R.id.btnSettings)
@@ -43,7 +41,7 @@ class ProfileFragment : Fragment() {
 
         db = FirebaseFirestore.getInstance()
 
-        loadUserData()
+        loadLguData()
 
         btnEditProfile.setOnClickListener {
             parentFragmentManager.beginTransaction()
@@ -73,33 +71,31 @@ class ProfileFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        loadUserData()
+        loadLguData()
     }
 
-    private fun loadUserData() {
+    private fun loadLguData() {
         val prefs = requireActivity().getSharedPreferences("UserSession", AppCompatActivity.MODE_PRIVATE)
         val phone = prefs.getString("loggedInPhone", null)
 
         if (phone != null) {
+            // Load from "Users" collection (assuming shared) or "lgus"
             db.collection("Users").document(phone).get()
                 .addOnSuccessListener { document ->
-                    if (document.exists()) {
+                    if (document.exists() && document.getString("role") == "lgu") {
                         val name = document.getString("name") ?: "Unknown"
-                        val roleRaw = document.getString("role") ?: "No Role"
-                        val role = roleRaw.replaceFirstChar { it.uppercaseChar() }
-                        val totalReports = document.getLong("totalReports")?.toString() ?: "0"
-                        val dailyReports = document.getLong("dailyReports")?.toString() ?: "0"
+                        val role = "LGU"  // Hardcoded or from doc
+                        val assignedAreaValue = document.getString("assignedArea") ?: "N/A"  // Renamed to avoid conflict
 
                         tvName.text = name
                         tvRole.text = role
-                        tvTotalReports.text = totalReports
-                        tvDailyReport.text = dailyReports
+                        assignedArea.text = "Assigned Area: $assignedAreaValue"  // Set on TextView
                     } else {
-                        Toast.makeText(requireContext(), "Profile data not found.", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "LGU profile data not found.", Toast.LENGTH_SHORT).show()
                     }
                 }
                 .addOnFailureListener {
-                    Toast.makeText(requireContext(), "Failed to load profile data.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Failed to load LGU profile data.", Toast.LENGTH_SHORT).show()
                 }
         } else {
             Toast.makeText(requireContext(), "No user logged in.", Toast.LENGTH_SHORT).show()

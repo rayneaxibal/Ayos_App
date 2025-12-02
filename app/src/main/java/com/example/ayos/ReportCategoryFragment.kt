@@ -4,8 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.SearchView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.example.ayos.databinding.FragmentReportCategoryBinding
 import com.google.android.material.chip.Chip
 
@@ -15,11 +16,14 @@ class ReportCategoryFragment : Fragment() {
     private var _binding: FragmentReportCategoryBinding? = null
     private val binding get() = _binding!!
 
+    private lateinit var viewModel: ReportViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentReportCategoryBinding.inflate(inflater, container, false)
+        viewModel = ViewModelProvider(requireActivity()).get(ReportViewModel::class.java)
         return binding.root
     }
 
@@ -49,7 +53,7 @@ class ReportCategoryFragment : Fragment() {
 
         binding.searchView.isIconified = false
         binding.searchView.clearFocus()
-        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+        binding.searchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?) = false
             override fun onQueryTextChange(newText: String?): Boolean {
                 val query = newText?.trim()?.lowercase().orEmpty()
@@ -63,9 +67,14 @@ class ReportCategoryFragment : Fragment() {
         })
 
         binding.btnCont.setOnClickListener {
-            val reportDescFragment = ReportDescFragment()
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.frameLayout, reportDescFragment)
+            if (selectedChip == null) {
+                Toast.makeText(requireContext(), "Please select a category", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            viewModel.category = selectedChip?.text.toString()
+
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.frameLayout, ReportDescFragment())
                 .addToBackStack("ReportDesc")
                 .commit()
         }

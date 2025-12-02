@@ -18,14 +18,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingEnd="120dp">
+            android:paddingEnd="120dp"
+            android:layout_marginLeft="10sp">
 
             <TextView
                 android:id="@+id/card_status"
                 android:layout_width="120dp"
                 android:layout_height="30dp"
                 android:textAlignment="center"
-                android:text="Submitted"
+                android:text="Status Report"
+                android:fontFamily="@font/inter"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp"
                 android:padding="6dp"
@@ -35,7 +37,8 @@
                 android:id="@+id/card_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Damaged Road"
+                android:text="Category Title"
+                android:fontFamily="@font/inter"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="#3B3B3B"
@@ -45,7 +48,8 @@
                 android:id="@+id/card_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="September 18, 2025"
+                android:text="Date Submitted"
+                android:fontFamily="@font/inter"
                 android:textSize="14sp"
                 android:textColor="#6D6D6D"
                 android:layout_marginBottom="8dp"/>
@@ -57,13 +61,24 @@
             android:orientation="vertical"
             android:layout_alignParentEnd="true"
             android:gravity="center_vertical"
-            android:layout_marginTop="15sp">
+            android:layout_marginTop="5sp"
+            android:layout_marginRight="10sp">
 
             <ImageButton
                 android:id="@+id/btn_view"
                 android:layout_width="99dp"
                 android:layout_height="22dp"
                 android:src="@drawable/view"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@android:color/transparent"
+                android:layout_marginBottom="8dp"/>
+
+            <ImageButton
+                android:id="@+id/btn_edit"
+                android:layout_width="99dp"
+                android:layout_height="22dp"
+                android:src="@drawable/edit"
                 android:clickable="true"
                 android:focusable="true"
                 android:background="@android:color/transparent"
@@ -77,6 +92,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:background="@android:color/transparent"/>
+
         </LinearLayout>
 
     </RelativeLayout>

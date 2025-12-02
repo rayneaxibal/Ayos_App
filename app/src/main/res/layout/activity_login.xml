@@ -24,7 +24,10 @@
         android:inputType="phone"
         android:textColorHint="#3C693D"
         android:gravity="center"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:maxLength="13"
+        android:text="+63"
+        android:textColor="#3C693D" />
 
     <EditText
         android:id="@+id/loginPassword"
@@ -44,7 +47,9 @@
         android:layout_width="241dp"
         android:layout_height="45dp"
         android:src="@drawable/login"
-        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="Submit"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"

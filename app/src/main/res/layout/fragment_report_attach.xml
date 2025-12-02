@@ -1,5 +1,6 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
@@ -10,8 +11,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginLeft="15dp">
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -20,13 +21,13 @@
 
             <ImageButton
                 android:id="@+id/backButton"
-                android:layout_width="33dp"
-                android:layout_height="33dp"
+                android:layout_width="22dp"
+                android:layout_height="23dp"
                 android:src="@drawable/ic_back"
-                app:tint="#404040"
+                android:background="@android:color/transparent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toBottomOf="parent" />
 
             <TextView
                 android:id="@+id/titleText"
@@ -41,31 +42,30 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
-            android:layout_width="250sp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:fontFamily="@font/inter"
             android:textStyle="bold"
             android:text="Please attach photos or videos of the issue"
-            android:paddingTop="15sp"
+            android:paddingTop="15dp"
             android:textColor="#404040"/>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_margin="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp"
             app:cardBackgroundColor="#EEEEEE">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_margin="5dp"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
                 android:padding="16dp">
@@ -77,46 +77,32 @@
                     android:src="@drawable/upload"
                     android:background="@android:color/transparent"
                     android:contentDescription="Upload" />
-
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:layout_width="250sp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:fontFamily="@font/inter"
             android:textStyle="bold"
             android:text="Where is the problem located?"
-            android:paddingTop="15sp"
+            android:paddingTop="15dp"
             android:textColor="#404040"/>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_margin="16dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp"
             app:cardBackgroundColor="#EEEEEE">
 
-            <LinearLayout
+            <org.osmdroid.views.MapView
+                android:id="@+id/mapView"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_margin="16dp"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="16dp">
-
-                <ImageButton
-                    android:id="@+id/locationPin"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/location_pin"
-                    android:background="@android:color/transparent" />
-
-            </LinearLayout>
-
+                android:layout_height="match_parent"/>
         </androidx.cardview.widget.CardView>
 
         <ImageButton
@@ -128,6 +114,5 @@
             android:contentDescription="Submit"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"/>
-
     </LinearLayout>
 </ScrollView>

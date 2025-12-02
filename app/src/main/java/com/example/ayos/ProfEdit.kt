@@ -1,48 +1,88 @@
 package com.example.ayos
 
 import android.os.Bundle
-import androidx.activity.OnBackPressedCallback
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.edit
-import com.example.ayos.databinding.FragmentProfEditBinding
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
-class ProfEdit : AppCompatActivity() {
+class ProfEdit : Fragment() {
 
-    private lateinit var binding: FragmentProfEditBinding
+    private lateinit var nameEditText: EditText
+    private lateinit var emailEditText: EditText
+    private lateinit var phoneEditText: EditText
+    private lateinit var locationEditText: EditText
+    private lateinit var btnConfirm: Button
+    private lateinit var btnBack: ImageView
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = FragmentProfEditBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    private val auth = FirebaseAuth.getInstance()
+    private val database = FirebaseDatabase.getInstance().reference
 
-        // Retrieve and pre-fill data from SharedPreferences
-        val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
-        binding.nameEditText.setText(sharedPreferences.getString("name", "Default Name"))
-        binding.emailEditText.setText(sharedPreferences.getString("email", "default@example.com"))
-        binding.phoneEditText.setText(sharedPreferences.getString("phone", "000-000-0000"))
-        binding.locationEditText.setText(sharedPreferences.getString("location", "Default Location"))
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_prof_edit, container, false)
+    }
 
-        // 🡨 Back Arrow → simply close this activity to return to ProfileFragment
-        binding.btnBack.setOnClickListener {
-            finish() // ✅ Returns to ProfileFragment (inside parent activity)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        nameEditText = view.findViewById(R.id.nameEditText)
+        emailEditText = view.findViewById(R.id.emailEditText)
+        phoneEditText = view.findViewById(R.id.phoneEditText)
+        locationEditText = view.findViewById(R.id.locationEditText)
+        btnConfirm = view.findViewById(R.id.btnConfirm)
+        btnBack = view.findViewById(R.id.btnBack)
+
+        val userId = auth.currentUser?.uid
+
+        if (userId != null) {
+            database.child("Users").child(userId).get().addOnSuccessListener { snapshot ->
+                if (snapshot.exists()) {
+                    nameEditText.setText(snapshot.child("name").value?.toString() ?: "")
+                    emailEditText.setText(snapshot.child("email").value?.toString() ?: "")
+                    phoneEditText.setText(snapshot.child("phone").value?.toString() ?: "")
+                    locationEditText.setText(snapshot.child("location").value?.toString() ?: "")
+                }
+            }.addOnFailureListener {
+                Toast.makeText(requireContext(), "Failed to load profile.", Toast.LENGTH_SHORT).show()
+            }
         }
 
-        // ✅ Confirm Button → Save changes and go back to ProfileFragment
-        binding.btnConfirm.setOnClickListener {
-            sharedPreferences.edit {
-                putString("name", binding.nameEditText.text.toString())
-                putString("email", binding.emailEditText.text.toString())
-                putString("phone", binding.phoneEditText.text.toString())
-                putString("location", binding.locationEditText.text.toString())
+        btnConfirm.setOnClickListener {
+            val name = nameEditText.text.toString().trim()
+            val email = emailEditText.text.toString().trim()
+            val phone = phoneEditText.text.toString().trim()
+            val location = locationEditText.text.toString().trim()
+
+            if (userId != null) {
+                val updatedData = mapOf(
+                    "name" to name,
+                    "email" to email,
+                    "phone" to phone,
+                    "location" to location
+                )
+
+                database.child("Users").child(userId).updateChildren(updatedData)
+                    .addOnSuccessListener {
+                        Toast.makeText(requireContext(), "Profile updated successfully!", Toast.LENGTH_SHORT).show()
+                        parentFragmentManager.popBackStack() // go back to ProfileFragment
+                    }
+                    .addOnFailureListener {
+                        Toast.makeText(requireContext(), "Failed to update profile.", Toast.LENGTH_SHORT).show()
+                    }
             }
-            finish() // ✅ Closes this screen and shows ProfileFragment again
         }
 
-        // ✅ Handle physical back press properly
-        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                finish() // ✅ Same behavior — go back to ProfileFragment
-            }
-        })
+        btnBack.setOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
     }
 }
