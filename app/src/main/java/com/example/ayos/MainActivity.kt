@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +32,8 @@ class MainActivity : AppCompatActivity() {
 
         val btnLogin = findViewById<ImageButton>(R.id.btnLogin)
         val btnSignup = findViewById<ImageButton>(R.id.btnSignup)
+        val lguBtn = findViewById<Button>(R.id.lguBtn)
+
 
         btnLogin.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
@@ -38,6 +41,10 @@ class MainActivity : AppCompatActivity() {
 
         btnSignup.setOnClickListener {
             startActivity(Intent(this, SignupActivity::class.java))
+        }
+
+        lguBtn.setOnClickListener {
+            startActivity(Intent(this, LguDashboardActivity::class.java))
         }
     }
 }
